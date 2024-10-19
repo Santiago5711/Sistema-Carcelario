@@ -1,0 +1,53 @@
+body {
+    background-color: #f8f9fa;
+}
+
+.card {
+    margin: 20px 0;
+}
+
+.map-responsive {
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+    height: 0;
+}
+
+.map-responsive iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+footer {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+.bg-image-card {
+    background-image: url('https://documenta.org.mx/blog-documenta/wp-content/uploads/2019/10/CarcelWEB.jpg'); /* Cambia 'ruta/a-tu-imagen.jpg' por la URL de tu imagen */
+    background-size: cover; /* Hace que la imagen cubra todo el fondo */
+    background-position: center; /* Centra la imagen */
+    color: white; /* Hace que el texto sea blanco para que contraste mejor */
+    padding: 40px 20px; /* Ajusta el padding si es necesario */
+    border-radius: 15px; /* Esto hace que los bordes de la card sean redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añade una sombra sutil */
+}
+
+.bg-image-card h2, .bg-image-card p {
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); /* Añade sombra al texto para mejor legibilidad */
+}
+
+/* Ajustes para la sección del mapa y el texto */
+.container .row {
+    margin-top: 30px;
+}
+
+.map-responsive {
+    margin-bottom: 20px; /* Para dar un poco más de espacio */
+}
+
+

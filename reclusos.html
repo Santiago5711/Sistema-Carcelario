@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Reclusos</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">Sistema Carcelario</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="reclusos.html">Reclusos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="visitas.html">Visitas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#administracion">Administración</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#actividades">Actividades</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Título de la página -->
+    <div class="container mt-4">
+        <h2 class="text-center mb-4">Gestión de Reclusos</h2>
+
+        <!-- Botón central para agregar recluso -->
+        <div class="text-center mb-4">
+            <button class="btn btn-primary btn-lg" id="addReclusoBtn">Agregar Recluso</button>
+        </div>
+
+        <!-- Contenedor de las cards de reclusos -->
+        <div id="reclusosContainer" class="row"></div>
+
+        <!-- Modal para agregar/editar recluso -->
+        <div class="modal fade" id="reclusoModal" tabindex="-1" role="dialog" aria-labelledby="reclusoModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="reclusoModalLabel">Agregar Recluso</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="reclusoForm">
+                            <div class="form-group">
+                                <label for="nombre">Nombre</label>
+                                <input type="text" class="form-control" id="nombre" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="identificacion">Identificación</label>
+                                <input type="text" class="form-control" id="identificacion" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="delitos">Delitos</label>
+                                <input type="text" class="form-control" id="delitos" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="condena">Condena</label>
+                                <input type="text" class="form-control" id="condena" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="fechaIngreso">Fecha de Ingreso</label>
+                                <input type="date" class="form-control" id="fechaIngreso" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Guardar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal para historial de visitas -->
+        <div class="modal fade" id="visitasModal" tabindex="-1" role="dialog" aria-labelledby="visitasModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="visitasModalLabel">Historial de Visitas</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            <div class="modal-body">
+                <ul id="visitasList" class="list-group">
+                    <!-- Aquí se listarán las visitas -->
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="reclusos.js"></script>
+
+</body>
+</html>

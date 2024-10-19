@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administración de Personal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="admin.css"> <!-- Aquí puedes agregar tus estilos CSS personalizados -->
+</head>
+<body>
+
+    <!-- Navbar de administración -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">Sistema Carcelario</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="reclusos.html">Reclusos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="visitas.html">Visitas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="administracion.html">Administración</a></li>
+                    <li class="nav-item"><a class="nav-link" href="activiades.html">Actividades</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Título de la página -->
+    <div class="container mt-4">
+        <h1 class="text-center">Administración del Personal</h1>
+        <p class="text-center">Gestiona el personal de la prisión según su rol y sus permisos.</p>
+        
+        <!-- Tabla de personal con filtros por rol -->
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Lista de Personal</h3>
+                <div class="mb-3">
+                    <label for="filtroRol" class="form-label">Filtrar por rol:</label>
+                    <select id="filtroRol" class="form-select" onchange="filtrarPorRol()">
+                        <option value="Todos">Todos</option>
+                        <option value="Guardia">Guardia</option>
+                        <option value="Médico">Médico</option>
+                        <option value="Psicólogo">Psicólogo</option>
+                        <option value="Administrador">Administrador</option>
+                    </select>
+                </div>
+                
+                <!-- Tabla de personal -->
+                <table class="table table-bordered">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Rol</th>
+                            <th>Permisos</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaPersonal">
+                        <!-- Los datos se cargarán dinámicamente con JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Botón para agregar nuevo personal -->
+        <div class="text-end">
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#personalModal">Agregar Personal</button>
+        </div>
+    </div>
+
+    <!-- Modal para agregar/editar personal -->
+    <div class="modal fade" id="personalModal" tabindex="-1" aria-labelledby="personalModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="personalModalLabel">Agregar Personal</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formPersonal">
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="nombre" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="rol" class="form-label">Rol</label>
+                            <select id="rol" class="form-select" required>
+                                <option value="Guardia">Guardia</option>
+                                <option value="Médico">Médico</option>
+                                <option value="Psicólogo">Psicólogo</option>
+                                <option value="Administrador">Administrador</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="permisos" class="form-label">Permisos</label>
+                            <input type="text" class="form-control" id="permisos" placeholder="Ej: Lectura, Escritura, Modificación" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts de Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    
+    <!-- Script de manejo de personal -->
+    <script src="admin.js"></script>
+
+</body>
+</html>
